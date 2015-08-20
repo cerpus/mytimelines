@@ -6,6 +6,10 @@ A timeline visualisation service.
 
 MyTimelines is known to run well with version 0.10.x of NodeJS.
 
+Install dependencies:
+
+    $ npm install
+
 Build required files:
 
     $ ./node_modules/.bin/gulp
