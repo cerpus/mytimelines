@@ -169,7 +169,8 @@ function header(route) {
             h('div.header-logo'),
             h('nav.mainNav', [
                 link('/', 'Home', route === '/'),
-                link('/timelines', 'Timelines', route === '/timelines')
+                link('/timelines', 'Timelines', route === '/timelines'),
+                h('span.mainNav-item', h('a', { href: 'https://github.com/cerpus/mytimelines' }, 'Source code'))
             ])
         ])
     ]);
