@@ -16,7 +16,7 @@ Build required files:
 
 To start the server:
 
-    $ node start
+    $ npm start
 
 ### Tempuhs-Server
 
