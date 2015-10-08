@@ -1,28 +1,28 @@
-$baseline: 22px;
+:root {
+    --baseline: 22px;
+}
 
 html { height: 100%; font-size: 62.5%; }
 
 body {
-    //background: #ffffff;
     background: #3D444E;
     height: 100%;
     margin: 0;
     padding: 0;
-    //color: #3D444E;
     color: #FFF;
-    font: 14px/#{$baseline} 'Open Sans', sans-serif;
+    font: 14px/var(--baseline) 'Open Sans', sans-serif;
 }
 
 .mytimelines-wrapper { height: 100%; }
 
 .h-one {
-    font: 40px/#{$baseline * 2} 'Crushed', cursive;
-    margin: 0 0 $baseline 0;
+    font: 40px/calc(var(--baseline) * 2) 'Crushed', cursive;
+    margin: 0 0 var(--baseline) 0;
 }
 
 .h-two {
-    font: 26px/#{$baseline * 1.5} 'Crushed', cursive;
-    margin: 0 0 #{$baseline / 2} 0;
+    font: 26px/calc(var(--baseline) * 1.5) 'Crushed', cursive;
+    margin: 0 0 calc(var(--baseline) / 2) 0;
 
     & a {
         color: #7BC8C8;
@@ -59,7 +59,7 @@ body {
 
 .header {
     background: #292E34;
-    height: $baseline * 2.5;
+    height: calc(var(--baseline) * 2.5);
     color: #fff;
     overflow: hidden;
 
@@ -72,7 +72,7 @@ body {
         background-size: 147px 36px;
         width: 147px;
         height: 36px;
-        margin: #{(($baseline * 2.5) - 36) / 2} 0;
+        margin: calc(((var(--baseline) * 2.5) - 36) / 2) 0;
     }
 
     .mainNav {
@@ -89,11 +89,11 @@ body {
             & > a {
                 width: 100%;
                 height: 100%;
-                padding: 0 $baseline;
+                padding: 0 var(--baseline);
                 color: #fff;
                 text-decoration: none;
                 text-transform: uppercase;
-                line-height: $baseline * 2.5;
+                line-height: var(--baseline) * 2.5;
                 display: inline-block;
             }
 
@@ -104,7 +104,7 @@ body {
 .main {
     background: #3D444E;
     width: 100%;
-    padding: #{$baseline * 3} 0;
+    padding: calc(var(--baseline) * 3) 0;
     color: #fff;
     overflow: auto;
 
@@ -126,13 +126,13 @@ body {
     background-size: 215px 255px;
     width: 215px;
     height: 255px;
-    margin: 0 ($baseline * 2) 0 0;
+    margin: 0 calc(var(--baseline) * 2) 0 0;
     display: inline-block;
     float: left;
 }
 
 .informativeText {
-    width: (460px - ($baseline * 2));
+    width: calc(460px - (var(--baseline) * 2));
     display: inline-block;
     float: left;
 }
@@ -145,23 +145,23 @@ body {
 
 .squigglyArt {
     width: 241px;
-    margin: ($baseline * 3) 0 0 ($baseline * 2);
+    margin: calc(var(--baseline) * 3) 0 0 calc(var(--baseline) * 2);
     display: inline-block;
     float: right;
 }
 
 .getStarted {
     background: #F46B32;
-    width: $baseline * 8;
-    margin: ($baseline * 4) auto 0;
-    padding: ($baseline * 1.5) ($baseline);
+    width: var(--baseline) * 8;
+    margin: calc(var(--baseline) * 4) auto 0;
+    padding: calc(var(--baseline) * 1.5) var(--baseline);
     display: block;
     position: relative;
     cursor: pointer; cursor: hand;
 
     &:before {
         content: "";
-        height: ($baseline * 4) - 20px;
+        height: calc((var(--baseline) * 4) - 20px);
         border: solid #F46B32;
         border-width: 0 2px 0 2px;
         position: absolute;
@@ -178,21 +178,9 @@ body {
 }
 
 .modal {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-align: center;
-       -moz-box-align: center;
-    -ms-flex-align: center;
-     -webkit-align-items: center;
-             align-items: center;
-    -webkit-box-pack: center;
-       -moz-box-pack: center;
-       -ms-flex-pack: center;
-    -webkit-justify-content: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     right: 0;
@@ -222,8 +210,8 @@ body {
 
 .timelineItem {
     background: #292E34;
-    margin: 0 0 #{$baseline / 2};
-    padding: $baseline / 2;
+    margin: 0 0 calc(var(--baseline) / 2);
+    padding: calc(var(--baseline) / 2);
     color: #fff;
     position: relative;
 
@@ -234,7 +222,7 @@ body {
 
     .timelineItem-tools {
         height: 100%;
-        padding: $baseline / 4;
+        padding: calc(var(--baseline) / 4);
         position: absolute;
         top: 0;
         right: 0;
@@ -244,9 +232,9 @@ body {
 
     .timelineItem-button {
         background: #212528;
-        width: $baseline * 2;
-        height: $baseline * 2;
-        margin: 0 0 0 #{$baseline / 4};
+        width: calc(var(--baseline) * 2);
+        height: calc(var(--baseline) * 2);
+        margin: 0 0 0 calc(var(--baseline) / 4);
         color: #fff;
         font-size: 10px;
         font-weight: bold;
@@ -272,7 +260,7 @@ body {
 
 .timelineForm {
     background: #29ABA3;
-    padding: $baseline / 2;
+    padding: calc(var(--baseline) / 2);
     position: relative;
 
     & .h-two { text-align: center; }
@@ -281,8 +269,8 @@ body {
     .timelineForm-input {
         background: #fff;
         width: 100%;
-        padding: $baseline / 2;
-        margin: 0 0 #{$baseline / 2};
+        padding: calc(var(--baseline) / 2);
+        margin: 0 0 calc(var(--baseline) / 2);
         border: none;
         color: #6E737B;
         font-size: 14px;
@@ -294,8 +282,8 @@ body {
     .timelineForm-input-special {
         background: #fff;
         width: calc(70%);
-        padding: $baseline / 2;
-        margin: 0 0 #{$baseline / 2} 0;
+        padding: calc(var(--baseline) / 2);
+        margin: 0 0 calc(var(--baseline) / 2) 0;
         border: none;
         color: #6E737B;
         font-size: 14px;
@@ -307,8 +295,8 @@ body {
     .timelineForm-button-special {
         background: #fff;
         width: 30%;
-        padding: $baseline / 2;
-        margin: 0 0 #{$baseline / 2};
+        padding: calc(var(--baseline) / 2);
+        margin: 0 0 calc(var(--baseline) / 2);
         border: none;
         color: #6E737B;
         font-size: 14px;
@@ -319,9 +307,9 @@ body {
 
     .timelineForm-input-half {
         background: #fff;
-        width: calc(50% - #{$baseline / 4});
-        padding: $baseline / 2;
-        margin: 0 #{$baseline / 4} #{$baseline / 2} 0;
+        width: calc(50% - (var(--baseline) / 4));
+        padding: calc(var(--baseline) / 2);
+        margin: 0 calc(var(--baseline) / 4) calc(var(--baseline) / 2) 0;
         border: none;
         color: #6E737B;
         font-size: 14px;
@@ -331,7 +319,7 @@ body {
         box-sizing: border-box;
     }
         .timelineForm-input-half--right {
-            margin: 0 0 #{$baseline / 2} #{$baseline / 4} ;
+            margin: 0 0 calc(var(--baseline) / 2) calc(var(--baseline) / 4) ;
         }
 
     .timelineForm-submit {
@@ -346,16 +334,16 @@ body {
 
     .timelineForm-close {
         background: #269187;
-        width: $baseline * 1.5;
-        height: $baseline * 1.5;
+        width: calc(var(--baseline) * 1.5);
+        height: calc(var(--baseline) * 1.5);
         margin: 0;
         border: none;
         color: #fff;
         text-align: center;
         cursor: pointer; cursor: hand;
         position: absolute;
-        top: $baseline / 2;
-        right: $baseline / 2;
+        top: calc(var(--baseline) / 2);
+        right: calc(var(--baseline) / 2);
         overflow: hidden;
 
         & > .icon {
@@ -369,16 +357,16 @@ body {
 
 .timelineEdit {
     width: 100%;
-    margin: 0 0 #{$baseline * 2};
+    margin: 0 0 calc(var(--baseline) * 2);
 }
 
     .timelineEdit-title {
         background: #292E34;
         width: 100%;
-        margin: 0 0 #{$baseline / 4};
-        padding: $baseline / 2;
+        margin: 0 0 calc(var(--baseline) / 4);
+        padding: var(--baseline) / 2;
         color: #7BC8C8;
-        font: 26px/#{$baseline * 1.5} 'Crushed', cursive;
+        font: 26px/calc(var(--baseline) * 1.5) 'Crushed', cursive;
         border: none;
         position: relative;
 
@@ -397,7 +385,7 @@ body {
     .timelineEdit-description {
         background: #292E34;
         width: 100%;
-        padding: $baseline / 2;
+        padding: calc(var(--baseline) / 2);
         color: #FFF;
         font-size: 14px;
         border: none;
@@ -418,8 +406,8 @@ body {
 
 .timespanItem {
     background: #292E34;
-    margin: 0 0 #{$baseline / 4};
-    padding: $baseline / 2;
+    margin: 0 0 calc(var(--baseline) / 4);
+    padding: calc(var(--baseline) / 2);
     color: #fff;
     position: relative;
 
@@ -430,7 +418,7 @@ body {
 
     .timespanItem-tools {
         height: 100%;
-        padding: $baseline / 4;
+        padding: calc(var(--baseline) / 4);
         position: absolute;
         top: 0;
         right: 0;
@@ -440,9 +428,9 @@ body {
 
     .timespanItem-button {
         background: #212528;
-        width: #{($baseline * 2) - ($baseline / 2)};
-        height: #{($baseline * 2) - ($baseline / 2)};
-        margin: 0 0 0 #{$baseline / 4};
+        width: calc((var(--baseline) * 2) - (var(--baseline) / 2));
+        height: calc((var(--baseline) * 2) - (var(--baseline) / 2));
+        margin: 0 0 0 calc(var(--baseline) / 4);
         color: #fff;
         font-size: 10px;
         font-weight: bold;
