@@ -12,13 +12,11 @@ Install dependencies:
 
 Build required files:
 
-    $ ./node_modules/.bin/gulp
-
-Command can be safely exited after task `default` is finished.
+    $ npm run build
 
 To start the server:
 
-    $ node ./src/server/server.js
+    $ node start
 
 ### Tempuhs-Server
 

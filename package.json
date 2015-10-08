@@ -2,14 +2,14 @@
   "name": "mytimelines",
   "version": "0.1.0",
   "description": "A frontend for tempuhs.",
-  "main": "index.js",
+  "main": "./src/server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "start": "node ./src/server/server.js"
   },
   "author": "Håkon Ellingsen",
   "license": "AGPLv3",
   "dependencies": {
-    "browserify": "^8.0.3",
     "geval": "^2.1.1",
     "global": "^4.3.0",
     "hapi": "^8.0.0",
@@ -21,11 +21,15 @@
     "superagent": "^0.21.0"
   },
   "devDependencies": {
-    "browserify": "^7.0.1",
-    "gulp": "^3.8.10",
-    "gulp-sass": "^1.2.4",
-    "gulp-util": "^3.0.1",
-    "vinyl-source-stream": "^1.0.0",
-    "watchify": "^2.2.1"
+    "autoprefixer": "^6.0.3",
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.19.0",
+    "cssnext-loader": "^1.0.1",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "postcss-loader": "^0.6.0",
+    "postcss-nested": "^1.0.0",
+    "style-loader": "^0.12.4",
+    "webpack": "^1.12.2"
   }
 }
