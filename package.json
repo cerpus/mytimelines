@@ -5,7 +5,12 @@
   "main": "./src/server/server.js",
   "scripts": {
     "build": "webpack",
-    "start": "node ./src/server/server.js"
+    "make-mytimeline-symlink": "cd node_modules && ln -nsf ../src mytimeline",
+    "postinstall": "npm run make-mytimeline-symlink",
+    "prebuild": "npm run make-mytimeline-symlink",
+    "prewatch": "npm run make-mytimeline-symlink",
+    "start": "node ./src/server/server.js",
+    "watch": "webpack -w"
   },
   "author": "Håkon Ellingsen",
   "license": "AGPLv3",
