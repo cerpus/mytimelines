@@ -8,6 +8,8 @@ import Router from 'mytimelines/client/libs/router';
 import style from './header.css';
 import layout from 'mytimelines/client/styles/layout.css';
 
+console.log(style);
+
 const GITHUB_URL = 'https://github.com/cerpus/mytimelines';
 
 export default function Header(route) {
@@ -35,7 +37,7 @@ export function render({ route }) {
 
 function link(uri, text, isActive) {
     return h(`span.${style.nav__item}`, {
-        className : isActive ? 'active' : ''
+        className : isActive ? style.active : ''
     }, [
         Router.anchor({ href: uri }, text)
     ]);
