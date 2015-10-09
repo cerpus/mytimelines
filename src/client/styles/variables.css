@@ -1,3 +1,5 @@
 :root {
     --baseline: 22px;
+
+    --section-spacing: calc(var(--baseline) * 3);
 }

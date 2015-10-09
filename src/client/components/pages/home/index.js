@@ -5,6 +5,10 @@ import {h} from 'mercury';
 import Router from 'mytimelines/client/libs/router';
 import {resetTimelineElement} from 'mytimelines/client/utils';
 
+// Import stylesheets
+import style from './home.css';
+import layout from 'mytimelines/client/styles/layout.css';
+
 const TEXT = {
     heading: 'Get creative with time',
     ingress: 'Create your own timeline about whatever topic you want - share it, expand it and learn more about the things that YOU care about, in a brand new timetastic way!',
@@ -14,23 +18,23 @@ const TEXT = {
 export function render() {
     resetTimelineElement();
 
-    return h('section.main', [
-        h('.l-container', [
-            h('.hugeLogo'),
-            h('.informativeText', [
+    return h('section', { className: style.root }, [
+        h('div', { className: layout.container }, [
+            h('div', { className: style.hugeLogo }),
+            h('div', { className: style.informativeText }, [
                 h('h1.h-one', TEXT.heading),
-                h('p.ingress', TEXT.ingress),
+                h('p', { className: style.ingress }, TEXT.ingress),
                 h('p', TEXT.body)
             ]),
-            h('.squigglyArt', [
+            h('div', { className: style.squigglyArt }, [
                 h('object.icon', {
                     type : 'image/svg+xml',
                     data : '/public/front-illu.svg'
                 })
             ])
         ]),
-        h('.lightMain', [
-            Router.anchor({ className : 'getStarted', href : '/timelines' }, [
+        h('div', { className: style.lightMain }, [
+            Router.anchor({ className : style.getStarted, href : '/timelines' }, [
                 h('object.icon', {
                     type : 'image/svg+xml',
                     data : '/public/get-started.svg'

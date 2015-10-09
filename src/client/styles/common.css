@@ -1,0 +1,12 @@
+@import './variables.css';
+
+.mainSection {
+    background: #3D444E;
+    width: 100%;
+    padding: calc(var(--baseline) * 3) 0;
+    color: #fff;
+    overflow: auto;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
