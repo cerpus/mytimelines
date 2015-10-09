@@ -1,41 +1,37 @@
 'use strict';
 
-var _ = require('lodash');
+import _ from 'lodash';
 
-module.exports = {
-    flattenTimespan: flattenTimespan,
-    resetTimelineElement: resetTimelineElement
-};
-
-function flattenTimespan(timespan) {
-    var data       = timespan[0];
-    var attributes = timespan[1];
+export function flattenTimespan(timespan) {
+    const data =       timespan[0];
+    const attributes = timespan[1];
 
     return {
-        id         : data.id,
-        beginMin   : data.beginMin,
-        endMax     : data.endMax,
-        parent     : data.parent,
+        id:       data.id,
+        beginMin: data.beginMin,
+        endMax:   data.endMax,
+        parent:   data.parent,
         attributes : {
-            title       : getValue(attributes, 'title'),
-            type        : getValue(attributes, 'type'),
-            description : getValue(attributes, 'description'),
-            media       : getValue(attributes, 'media')
+            title:       getValue(attributes, 'title'),
+            type:        getValue(attributes, 'type'),
+            description: getValue(attributes, 'description'),
+            media:       getValue(attributes, 'media')
         }
     };
 
     function getValue(attributes, key) {
-        var value = _(attributes)
-                .filter({ name : key })
-                .pluck('value')
-                .value().toString();
+        const value = _(attributes)
+                  .filter({ name : key })
+                  .pluck('value')
+                  .value().toString();
 
         return value;
     }
 }
 
-function resetTimelineElement() {
-    var timeline = document.getElementById('timeline');
+export function resetTimelineElement() {
+    const timeline = document.getElementById('timeline');
+
     if (timeline) {
         timeline.innerHTML = '';
         timeline.removeAttribute('style');
