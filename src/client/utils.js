@@ -3,7 +3,8 @@
 var _ = require('lodash');
 
 module.exports = {
-    flattenTimespan : flattenTimespan
+    flattenTimespan: flattenTimespan,
+    resetTimelineElement: resetTimelineElement
 };
 
 function flattenTimespan(timespan) {
@@ -30,5 +31,14 @@ function flattenTimespan(timespan) {
                 .value().toString();
 
         return value;
+    }
+}
+
+function resetTimelineElement() {
+    var timeline = document.getElementById('timeline');
+    if (timeline) {
+        timeline.innerHTML = '';
+        timeline.removeAttribute('style');
+        timeline.removeAttribute('class');
     }
 }

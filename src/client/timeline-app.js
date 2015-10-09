@@ -12,6 +12,7 @@ var utils           = require('./utils');
 var flattenTimespan = utils.flattenTimespan;
 var TimespanItem    = require('./timespan-item');
 import Header, {render as HeaderRender} from './components/header';
+import {render as HomeRender} from './components/pages/home';
 
 module.exports = TimelineApp;
 
@@ -146,15 +147,7 @@ TimelineApp.render = function render(state) {
     return h('.mytimelines-wrapper', [
         hg.partial(HeaderRender, state.header),
         Router.render(state.route, {
-            '/' : function (params) {
-                if (document.getElementById('timeline')) {
-                    document.getElementById('timeline').innerHTML = '';
-                    document.getElementById('timeline').removeAttribute('style');
-                    document.getElementById('timeline').removeAttribute('class');
-                }
-
-                return homeView();
-            },
+            '/' : () => HomeRender(),
             '/timelines' : function () {
                 return hg.partial(timelinesListView, state);
             },
@@ -166,28 +159,6 @@ TimelineApp.render = function render(state) {
         hg.partial(editModal, state)
     ]);
 };
-
-function homeView() {
-    return [h('section.main', h('.l-container', [
-        h('.hugeLogo'),
-        h('.informativeText', [
-            h('h1.h-one', 'Get creative with time'),
-            h('p.ingress', 'Create your own timeline about whatever topic you want - share it, expand it and learn more about the things that YOU care about, in a brand new timetastic way!'),
-            h('p', 'With MyTimelines you can go even further than just creating a static timeline. Want to find other events that happened during the same period as yours? Well you can! You can even choose to add these events to your own timeline, or invite your friends to collaborate on your timelines. Got a history project you need to do? A visual overview of your travel history to compare with your friends? With MyTimelines, all this will soon be possible!')
-        ]),
-        h('.squigglyArt', [
-            h('object.icon', {
-                type : 'image/svg+xml',
-                data : '/public/front-illu.svg'
-            })
-        ])
-    ])), h('.lightMain', [
-        Router.anchor({ className : 'getStarted', href : '/timelines' }, [h('object.icon', {
-            type : 'image/svg+xml',
-            data : '/public/get-started.svg'
-        })])
-    ])];
-}
 
 function mainSection(elements) {
     return h('section.main', [
