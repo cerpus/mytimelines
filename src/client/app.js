@@ -11,8 +11,7 @@ var flattenTimespan = utils.flattenTimespan;
 var TimelineApp     = require('./timeline-app');
 var TimespanItem    = require('./timespan-item');
 
-require('./styles/style.css');
-require('./styles/layout.css');
+require('./styles/global.css');
 
 module.exports = App;
 

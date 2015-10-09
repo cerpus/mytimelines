@@ -1,5 +1,6 @@
 @import "./variables";
 
+:global {
 html { height: 100%; font-size: 62.5%; }
 
 body {
@@ -45,82 +46,6 @@ body {
     width: 100%;
     vertical-align: top;
     display: inline-block;
-}
-
-.main {
-    background: #3D444E;
-    width: 100%;
-    padding: calc(var(--baseline) * 3) 0;
-    color: #fff;
-    overflow: auto;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.lightMain {
-    background: white url("/public/front-timeline.svg") repeat-x top;
-    background-size: 204px 24px;
-    width: 100%;
-    min-height: calc(100% - 525px);
-    color: #6E737A;
-    overflow: hidden;
-}
-
-.hugeLogo {
-    background: url("/public/front-logo.svg");
-    background-size: 215px 255px;
-    width: 215px;
-    height: 255px;
-    margin: 0 calc(var(--baseline) * 2) 0 0;
-    display: inline-block;
-    float: left;
-}
-
-.informativeText {
-    width: calc(460px - (var(--baseline) * 2));
-    display: inline-block;
-    float: left;
-}
-
-.ingress {
-    color: #FA8754;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.squigglyArt {
-    width: 241px;
-    margin: calc(var(--baseline) * 3) 0 0 calc(var(--baseline) * 2);
-    display: inline-block;
-    float: right;
-}
-
-.getStarted {
-    background: #F46B32;
-    width: var(--baseline) * 8;
-    margin: calc(var(--baseline) * 4) auto 0;
-    padding: calc(var(--baseline) * 1.5) var(--baseline);
-    display: block;
-    position: relative;
-    cursor: pointer; cursor: hand;
-
-    &:before {
-        content: "";
-        height: calc((var(--baseline) * 4) - 20px);
-        border: solid #F46B32;
-        border-width: 0 2px 0 2px;
-        position: absolute;
-        right: 50%;
-        left: 50%;
-        bottom: 100%;
-    }
-
-    & > .icon {
-        vertical-align: middle;
-        display: inline-block;
-        pointer-events: none;
-    }
 }
 
 .modal {
@@ -401,3 +326,5 @@ body {
             height: 100%;
         }
     }
+
+}
