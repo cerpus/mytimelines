@@ -11,8 +11,8 @@ var api             = require('./api');
 var utils           = require('./utils');
 var flattenTimespan = utils.flattenTimespan;
 var TimespanItem    = require('./timespan-item');
-import Header, {render as HeaderRender} from './components/header';
-import {render as HomeRender} from './components/pages/home';
+import Header, {render as HeaderRender} from 'mytimelines/client/components/header';
+import {render as HomeRender} from 'mytimelines/client/components/pages/home';
 
 module.exports = TimelineApp;
 
