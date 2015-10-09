@@ -6,7 +6,7 @@ import Router from 'mytimelines/client/libs/router';
 
 const GITHUB_URL = 'https://github.com/cerpus/mytimelines';
 
-function Header(route) {
+export default function Header(route) {
     const state = hg.state({
         route: route
     });
@@ -14,7 +14,7 @@ function Header(route) {
     return state;
 }
 
-Header.render = function render({ route }) {
+export function render({ route }) {
     return h('header.header', [
         h('div.l-container', [
             h('div.header-logo'),
@@ -36,5 +36,3 @@ function link(uri, text, isActive) {
         Router.anchor({ href: uri }, text)
     ]);
 }
-
-export default Header;

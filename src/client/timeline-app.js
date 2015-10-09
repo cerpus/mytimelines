@@ -11,7 +11,7 @@ var api             = require('./api');
 var utils           = require('./utils');
 var flattenTimespan = utils.flattenTimespan;
 var TimespanItem    = require('./timespan-item');
-var Header = require('./components/header');
+import Header, {render as HeaderRender} from './components/header';
 
 module.exports = TimelineApp;
 
@@ -144,7 +144,7 @@ function resetTimelineFormValues(state) {
 
 TimelineApp.render = function render(state) {
     return h('.mytimelines-wrapper', [
-        hg.partial(Header.render, state.header),
+        hg.partial(HeaderRender, state.header),
         Router.render(state.route, {
             '/' : function (params) {
                 if (document.getElementById('timeline')) {
