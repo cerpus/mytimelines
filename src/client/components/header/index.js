@@ -41,7 +41,7 @@ function link(uri, text, isActive) {
     ]);
 
     function className(isActive) {
-        if (isActive) return `${style.nav__item} ${style.active}`;
-        else          return style.nav__item;
+        if (isActive) { return `${style.nav__item} ${style.active}`; }
+        else          { return style.nav__item; }
     }
 }
