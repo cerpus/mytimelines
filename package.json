@@ -5,7 +5,7 @@
   "main": "./src/server/server.js",
   "scripts": {
     "build": "webpack",
-    "make-mytimeline-symlink": "cd node_modules && ln -nsf ../src mytimeline",
+    "make-mytimeline-symlink": "cd node_modules && ln -nsf ../src mytimelines",
     "postinstall": "npm run make-mytimeline-symlink",
     "prebuild": "npm run make-mytimeline-symlink",
     "prewatch": "npm run make-mytimeline-symlink",
