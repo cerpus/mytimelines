@@ -11,13 +11,17 @@ var api             = require('./api');
 var utils           = require('./utils');
 var flattenTimespan = utils.flattenTimespan;
 var TimespanItem    = require('./timespan-item');
+var Header = require('./components/header');
 
 module.exports = TimelineApp;
 
 function TimelineApp(data) {
+    var route = Router();
+
     var state = hg.state({
+        header: Header(route),
         timelines : hg.varhash(data.timelines || {}, TimespanItem),
-        route     : Router(),
+        route     : route,
         forms : hg.struct({
             event : hg.struct({
                 url         : hg.value(''),
@@ -140,7 +144,7 @@ function resetTimelineFormValues(state) {
 
 TimelineApp.render = function render(state) {
     return h('.mytimelines-wrapper', [
-        hg.partial(header, state.route),
+        hg.partial(Header.render, state.header),
         Router.render(state.route, {
             '/' : function (params) {
                 if (document.getElementById('timeline')) {
@@ -162,29 +166,6 @@ TimelineApp.render = function render(state) {
         hg.partial(editModal, state)
     ]);
 };
-
-function header(route) {
-    return h('header.header', [
-        h('div.l-container', [
-            h('div.header-logo'),
-            h('nav.mainNav', [
-                link('/', 'Home', route === '/'),
-                link('/timelines', 'Timelines', route === '/timelines'),
-                h('span.mainNav-item', h('a', { href: 'https://github.com/cerpus/mytimelines' }, 'Source code'))
-            ])
-        ])
-    ]);
-}
-
-function link(uri, text, isActive) {
-    return h('span.mainNav-item', {
-        className : isActive ? 'active' : ''
-    }, [
-        Router.anchor({
-            href      : uri
-        }, text)
-    ]);
-}
 
 function homeView() {
     return [h('section.main', h('.l-container', [
