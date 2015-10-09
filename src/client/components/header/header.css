@@ -1,0 +1,48 @@
+@import "mytimelines/client/styles/variables";
+
+:root {
+    --height: calc(var(--baseline) * 2.5);
+}
+
+.root {
+    background: #292E34;
+    height: var(--height);
+    color: #fff;
+    overflow: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.logo {
+    background: url('/public/logo.svg');
+    background-size: 147px 36px;
+    width: 147px;
+    height: 36px;
+    margin: calc((var(--height) - 36) / 2) 0;
+    float: left;
+}
+
+.nav {
+    height: var(--height);
+    float: right;
+}
+
+.nav__item {
+    height: 100%;
+    display: inline-block;
+
+    & > a {
+        width: 100%;
+        height: 100%;
+        padding: 0 var(--baseline);
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: var(--height);
+        display: inline-block;
+    }
+
+    &.active { background: #3D444E; }
+    &:hover { background: #FA8754 }
+}

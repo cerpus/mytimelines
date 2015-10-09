@@ -12,6 +12,7 @@ var TimelineApp     = require('./timeline-app');
 var TimespanItem    = require('./timespan-item');
 
 require('./styles/style.css');
+require('./styles/layout.css');
 
 module.exports = App;
 

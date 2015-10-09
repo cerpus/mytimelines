@@ -4,6 +4,10 @@ import hg, {h} from 'mercury';
 
 import Router from 'mytimelines/client/libs/router';
 
+// Import styleseets
+import style from './header.css';
+import layout from 'mytimelines/client/styles/layout.css';
+
 const GITHUB_URL = 'https://github.com/cerpus/mytimelines';
 
 export default function Header(route) {
@@ -15,13 +19,13 @@ export default function Header(route) {
 }
 
 export function render({ route }) {
-    return h('header.header', [
-        h('div.l-container', [
-            h('div.header-logo'),
-            h('nav.mainNav', [
+    return h(`header.${style.root}`, [
+        h(`div.${layout.container}`, [
+            h(`div.${style.logo}`),
+            h(`nav.${style.nav}`, [
                 link('/', 'Home', route === '/'),
                 link('/timelines', 'Timelines', route === '/timelines'),
-                h('span.mainNav-item', [
+                h(`span.${style.nav__item}`, [
                     h('a', { href: GITHUB_URL }, 'Source code')
                 ])
             ])
@@ -30,7 +34,7 @@ export function render({ route }) {
 };
 
 function link(uri, text, isActive) {
-    return h('span.mainNav-item', {
+    return h(`span.${style.nav__item}`, {
         className : isActive ? 'active' : ''
     }, [
         Router.anchor({ href: uri }, text)

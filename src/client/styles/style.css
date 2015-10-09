@@ -1,6 +1,4 @@
-:root {
-    --baseline: 22px;
-}
+@import "./variables";
 
 html { height: 100%; font-size: 62.5%; }
 
@@ -30,14 +28,6 @@ body {
     }
 }
 
-.l-container {
-    width: 970px;
-    min-height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-}
-
 .g-four-col {
     width: 316px;
     margin: 0 0 0 14px;
@@ -56,50 +46,6 @@ body {
     vertical-align: top;
     display: inline-block;
 }
-
-.header {
-    background: #292E34;
-    height: calc(var(--baseline) * 2.5);
-    color: #fff;
-    overflow: hidden;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-    .header-logo {
-        background: url('/public/logo.svg');
-        background-size: 147px 36px;
-        width: 147px;
-        height: 36px;
-        margin: calc(((var(--baseline) * 2.5) - 36) / 2) 0;
-    }
-
-    .mainNav {
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-        .mainNav-item {
-            height: 100%;
-            display: inline-block;
-
-            & > a {
-                width: 100%;
-                height: 100%;
-                padding: 0 var(--baseline);
-                color: #fff;
-                text-decoration: none;
-                text-transform: uppercase;
-                line-height: var(--baseline) * 2.5;
-                display: inline-block;
-            }
-
-            &.active { background: #3D444E; }
-            &:hover { background: #FA8754 }
-        }
 
 .main {
     background: #3D444E;
