@@ -2,4 +2,22 @@
     --baseline: 22px;
 
     --section-spacing: calc(var(--baseline) * 3);
+
+    --white-color: #FFFFFF;
+
+    --light-black-color: #3D444E;
+    --black-color:       #292E34;
+    --heavy-black-color: #212528;
+
+    --light-gray-color: #E6E7E7;
+    --gray-color:       #9EA1A6;
+    --heavy-gray-color: #6E737A;
+
+    --light-orange-color: #FA8754;
+    --orange-color:       #F46B32;
+
+    --lighter-seafoam-green-color: #E4F4F4;
+    --light-seafoam-green-color:   #B4E1DE;
+    --seafoam-green-color:         #7BC8C8;
+    --heavy-seafoam-green-color:   #28AAA2;
 }
