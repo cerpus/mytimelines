@@ -2,12 +2,18 @@
 
 :root {
     --height: calc(var(--baseline) * 2.5);
+
+    --text-color:        var(--white-color);
+    --background-color:  var(--black-color);
+    --item-border-color: var(--heavy-black-color);
+    --item-active-color: var(--light-black-color);
+    --item-hover-color:  var(--light-orange-color);
 }
 
 .root {
-    background: #292E34;
+    background: var(--background-color);
     height: var(--height);
-    color: #fff;
+    color: var(--text-color);
     overflow: hidden;
 
     -webkit-font-smoothing: antialiased;
@@ -34,13 +40,13 @@
 
     & > a {
         padding: 0 var(--baseline);
-        color: #fff;
+        color: var(--text-color);
         text-decoration: none;
         text-transform: uppercase;
         line-height: var(--height);
         display: inline-block;
     }
 
-    &.active { background: #3D444E; }
-    &:hover { background: #FA8754 }
+    &.active { background: var(--item-active-color); }
+    &:hover { background: var(--item-hover-color); }
 }
